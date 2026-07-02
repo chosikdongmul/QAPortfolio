@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import PhotoGrid from "../components/PhotoGrid.astro";
 import {
   skillDeepDives,
   featuredProjects,
@@ -36,8 +35,13 @@ import { withBase } from "../lib/url";
             ))}
           </ul>
           {skill.photos.length > 0 && (
-            <div class="mt-5">
-              <PhotoGrid photos={skill.photos} />
+            <div class="mt-5 space-y-3">
+              {skill.photos.map((photo) => (
+                <figure class="reveal overflow-hidden rounded-xl border border-white/10 bg-base-900">
+                  <img src={withBase(photo.src)} alt={photo.caption} loading="lazy" class="w-full object-cover" />
+                  <figcaption class="p-2 text-xs text-offwhite/70">{photo.caption}</figcaption>
+                </figure>
+              ))}
             </div>
           )}
         </div>
@@ -47,7 +51,7 @@ import { withBase } from "../lib/url";
 
   <section class="reveal mt-12">
     <h2 class="text-sm font-semibold uppercase tracking-widest text-offwhite/50">Featured Project</h2>
-    <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-4 grid gap-4">
       {featuredProjects.map((p) => <ProjectCard {...p} />)}
     </div>
   </section>
@@ -77,6 +81,12 @@ import { withBase } from "../lib/url";
           <dd class="mt-1 text-offwhite">{externalAdvisory.advisoryDetail}</dd>
         </div>
       </dl>
+      {externalAdvisory.photo && (
+        <figure class="reveal mt-5 overflow-hidden rounded-xl border border-white/10 bg-base-900">
+          <img src={withBase(externalAdvisory.photo.src)} alt={externalAdvisory.photo.caption} loading="lazy" class="w-full object-cover" />
+          <figcaption class="p-2 text-xs text-offwhite/70">{externalAdvisory.photo.caption}</figcaption>
+        </figure>
+      )}
     </div>
   </section>
 

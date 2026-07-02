@@ -1,6 +1,6 @@
 import type { Photo } from "./types";
 
-// 4.3-a 핵심 스킬 딥다이브 (포트폴리오 PDF/PPT 기반)
+// 4.3-a 핵심 스킬 딥다이브 (포트폴리오 PDF/PPT 기반 — 슬라이드 원본 전체를 캡처해 사용)
 export type SkillDeepDive = {
   name: string;
   quote: string;
@@ -16,10 +16,7 @@ export const skillDeepDives: SkillDeepDive[] = [
       "맞춤형 Workflow 설계: 프로젝트 특성에 최적화된 이슈 상태와 전환 흐름을 직접 세팅합니다.",
       "이슈 보고 프로세스 최적화: 리포터마다 기입 정보가 누락되거나 상이할 수 있는 점을 최소화하는 프로세스를 적용합니다. 리포트 내 이슈의 최소 정보가 보장되며, 레이블을 통해 이슈를 더 쉽게 추적할 수 있습니다.",
     ],
-    photos: [
-      { src: "/images/portfolio/jira-workflow.jpg", caption: "맞춤형 Workflow 설계" },
-      { src: "/images/portfolio/jira-process.jpg", caption: "이슈 보고 프로세스 최적화" },
-    ],
+    photos: [{ src: "/images/portfolio/jira-slide.jpg", caption: "JIRA — Workflow 설계 및 이슈 보고 프로세스 (포트폴리오 슬라이드)" }],
   },
   {
     name: "GitHub",
@@ -29,7 +26,7 @@ export const skillDeepDives: SkillDeepDive[] = [
       "버그 수정을 위한 머지 전략 — 라이브 환경에서 발견된 버그: Master 최신 / 서비스 중인 버전의 Dev에서 테스트 후, 라이브 패치에 반영합니다.",
       "버그 수정을 위한 머지 전략 — Master 환경에서 발견된 버그: Live에 영향 없는 신규 시스템 버그는 Master 버전에만 반영합니다.",
     ],
-    photos: [],
+    photos: [{ src: "/images/portfolio/github-slide.jpg", caption: "GitHub — 브랜치 전략 및 머지 전략 다이어그램 (포트폴리오 슬라이드)" }],
   },
   {
     name: "Unity",
@@ -39,10 +36,7 @@ export const skillDeepDives: SkillDeepDive[] = [
       "해상도(Resolution) 변경으로 UI 검수: 다양한 해상도와 화면 비율을 시뮬레이션하여 UI 구성 등을 테스트합니다.",
       "테스트에 필요한 이미지, 사운드, Prefab 등 리소스를 직접 추출하여 검증합니다.",
     ],
-    photos: [
-      { src: "/images/portfolio/unity-editor-1.jpg", caption: "Unity 에디터 내 데이터/UI 검수" },
-      { src: "/images/portfolio/unity-editor-2.jpg", caption: "해상도별 UI 테스트" },
-    ],
+    photos: [{ src: "/images/portfolio/unity-slide.jpg", caption: "Unity — 에디터 내 데이터/UI 검수 (포트폴리오 슬라이드)" }],
   },
   {
     name: "Excel",
@@ -52,7 +46,7 @@ export const skillDeepDives: SkillDeepDive[] = [
       "테스트 동선 최적화: ISTQB 산업 표준에 의거한 테스트를 설계합니다. 불필요한 동선을 최소화한 상태전이 기반 테스트 설계로 전체 테스트 리드 타임을 크게 단축합니다.",
       "테스트 시각화: 전체 TC 대비 각 상태를 실시간으로 분류·집계하고, 각 항목의 비율을 수치화하여 유관 부서에 현재 시스템의 품질 현황을 한눈에 파악할 수 있게 합니다.",
     ],
-    photos: [{ src: "/images/portfolio/excel-simulator.jpg", caption: "테스트 시뮬레이터 / 테스트 시각화" }],
+    photos: [{ src: "/images/portfolio/excel-slide.jpg", caption: "Excel — 테스트 시뮬레이터 및 테스트 시각화 (포트폴리오 슬라이드)" }],
   },
   {
     name: "Photoshop",
@@ -62,13 +56,7 @@ export const skillDeepDives: SkillDeepDive[] = [
       "마케팅 에셋 퀄리티 컨트롤: 앱 마켓 썸네일, 배너 등 이미지의 해상도, 레이아웃, 오탈자를 검수하고 필요 시 직접 수정합니다.",
       "그래픽 리소스 자체 수급: 리사이징, 텍스트 교체 등 아트 리소스가 낭비되지 않도록 즉각 편집이 가능합니다.",
     ],
-    photos: [
-      { src: "/images/portfolio/photoshop-1.jpg", caption: "마케팅 이미지 제작/편집" },
-      { src: "/images/portfolio/photoshop-2.jpg", caption: "마케팅 에셋 퀄리티 컨트롤" },
-      { src: "/images/portfolio/photoshop-3.jpg", caption: "그래픽 리소스 편집" },
-      { src: "/images/portfolio/photoshop-4.jpg", caption: "그래픽 리소스 편집" },
-      { src: "/images/portfolio/photoshop-5.jpg", caption: "그래픽 리소스 편집" },
-    ],
+    photos: [{ src: "/images/portfolio/photoshop-slide.jpg", caption: "Photoshop — 마케팅 이미지 및 그래픽 리소스 작업물 (포트폴리오 슬라이드)" }],
   },
   {
     name: "Diff & Debug Tools",
@@ -78,7 +66,7 @@ export const skillDeepDives: SkillDeepDive[] = [
       "사후 분석(안드로이드 환경 크래시 분석): 빌드된 게임에서 오류 발생 시 Android Studio를 연결하여 어느 부분에서 크래시가 발생했는지 재현 및 로그 추출이 가능합니다.",
       "사후 분석(Unity 에디터 디버깅): Unity 환경 내에서 발생하는 런타임 에러 등 이슈를 Console 로그를 통해 추적하여, 개발팀에 명확한 재현 경로와 발생 지점을 공유합니다.",
     ],
-    photos: [],
+    photos: [{ src: "/images/portfolio/diffdebug-slide.jpg", caption: "Diff & Debug Tools — Fork 무결성 검수 및 Android Studio 크래시 분석 (포트폴리오 슬라이드)" }],
   },
 ];
 
@@ -87,6 +75,7 @@ export type FeaturedProject = {
   period: string;
   role: string;
   highlight: string;
+  photo?: Photo;
 };
 
 // 4.3-b Featured Project
@@ -96,6 +85,7 @@ export const featuredProjects: FeaturedProject[] = [
     period: "2025.02 ~ 2025.11",
     role: "Director & Lead QA",
     highlight: "프로젝트 총괄. 개발 시작부터 런칭까지 모든 개발 파이프라인을 통제했습니다.",
+    photo: { src: "/images/portfolio/project-slide.jpg", caption: "쿠노이치 키우기 — Director & Lead QA (포트폴리오 슬라이드)" },
   },
 ];
 
@@ -124,6 +114,7 @@ export type ExternalAdvisory = {
   projectName: string;
   taskName: string;
   advisoryDetail: string;
+  photo?: Photo;
 };
 
 export const externalAdvisory: ExternalAdvisory = {
@@ -135,6 +126,7 @@ export const externalAdvisory: ExternalAdvisory = {
   projectName: "우수기업연구소육성사업(ATC+)",
   taskName: "실감형 콘텐츠 공유 서비스를 위한 그래프 기반 지능형 메타버스 엔진 개발",
   advisoryDetail: "메타버스 3D 에셋 관리 현황과 동적 로드 및 조합 가능한 비율 검토",
+  photo: { src: "/images/portfolio/advisory-slide.jpg", caption: "우수기업연구소육성사업(ATC+) 전문가 검토 의견서 (포트폴리오 슬라이드)" },
 };
 
 // 4.3-f Achievements

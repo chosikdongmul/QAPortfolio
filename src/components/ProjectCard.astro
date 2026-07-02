@@ -1,15 +1,25 @@
 ---
+import type { Photo } from "../content/types";
+import { withBase } from "../lib/url";
+
 interface Props {
   title: string;
   period: string;
   role: string;
   highlight: string;
+  photo?: Photo;
 }
-const { title, period, role, highlight } = Astro.props;
+const { title, period, role, highlight, photo } = Astro.props;
 ---
 
 <article class="reveal rounded-2xl border border-white/10 bg-base-800 p-6 transition-colors hover:border-accent-500/50">
   <h3 class="text-lg font-bold text-offwhite">{title}</h3>
   <p class="mt-1 text-sm text-accent-400">{role} · {period}</p>
   <p class="mt-3 text-sm leading-relaxed text-offwhite/80">{highlight}</p>
+  {photo && (
+    <figure class="reveal mt-4 overflow-hidden rounded-xl border border-white/10 bg-base-900">
+      <img src={withBase(photo.src)} alt={photo.caption} loading="lazy" class="w-full object-cover" />
+      <figcaption class="p-2 text-xs text-offwhite/70">{photo.caption}</figcaption>
+    </figure>
+  )}
 </article>
