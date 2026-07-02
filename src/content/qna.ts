@@ -15,7 +15,13 @@ export const q1 = {
     "코스앤코믹 페스티벌",
   ],
   photos: [
-
+    { src: "/images/qna/q1-1.jpg", caption: "26.05 수원 코믹월드" },
+    { src: "/images/qna/q1-2.jpg", caption: "25.12 AGF" },
+    { src: "/images/qna/q1-3.jpg", caption: "25.07 서울 코믹월드" },
+    { src: "/images/qna/q1-4.jpg", caption: "25.10 수원 코믹월드" },
+    { src: "/images/qna/q1-5.jpg", caption: "개인 촬영회(서브컬쳐 모임)" },
+    { src: "/images/qna/q1-6.jpg", caption: "일산 킨텍스 행사" },
+    { src: "/images/qna/q1-7.jpg", caption: "25.10 코믹월드" },
   ] as Photo[],
 };
 
@@ -33,6 +39,9 @@ export const q2 = {
     "ㄴ https://chosikdongmul.github.io/macPolio/",
   ],
   photos: [
+    { src: "/images/qna/q2-1.jpg", caption: "코스 앤 코믹 페스티벌" },
+    { src: "/images/qna/q2-2.jpg", caption: "이누야샤 촬영" },
+    { src: "/images/qna/q2-3.jpg", caption: "26.05 플레이엑스포" },
     { src: "/images/qna/KakaoTalk_20260702_155339238.jpg", caption: "26.06.28 서울랜드" },
   ] as Photo[],
 };

@@ -4,7 +4,6 @@ import ProjectCard from "../components/ProjectCard.astro";
 import {
   skillDeepDives,
   featuredProjects,
-  testCaseDoc,
   skills,
   achievements,
   externalAdvisory,
@@ -26,20 +25,22 @@ import { withBase } from "../lib/url";
         <div class="reveal rounded-2xl border border-white/10 bg-base-800 p-6">
           <h3 class="text-lg font-bold text-offwhite">{skill.name}</h3>
           <p class="mt-2 text-base font-medium leading-relaxed text-accent-400">"{skill.quote}"</p>
-          <ul class="mt-4 space-y-2">
-            {skill.points.map((point) => (
-              <li class="flex gap-2 text-sm leading-relaxed text-offwhite/80">
-                <span class="text-accent-400">·</span>
-                <span>{point}</span>
-              </li>
-            ))}
-          </ul>
+          {skill.points.length > 0 && (
+            <ul class="mt-4 space-y-2">
+              {skill.points.map((point) => (
+                <li class="flex gap-2 text-sm leading-relaxed text-offwhite/80">
+                  <span class="text-accent-400">·</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          )}
           {skill.photos.length > 0 && (
             <div class="mt-5 space-y-3">
               {skill.photos.map((photo) => (
                 <figure class="reveal overflow-hidden rounded-xl border border-white/10 bg-base-900">
-                  <img src={withBase(photo.src)} alt={photo.caption} loading="lazy" class="w-full object-cover" />
-                  <figcaption class="p-2 text-xs text-offwhite/70">{photo.caption}</figcaption>
+                  <img src={withBase(photo.src)} alt={photo.caption || skill.name} loading="lazy" class="w-full object-cover" />
+                  {photo.caption && <figcaption class="p-2 text-xs text-offwhite/70">{photo.caption}</figcaption>}
                 </figure>
               ))}
             </div>
@@ -50,8 +51,8 @@ import { withBase } from "../lib/url";
   </section>
 
   <section class="reveal mt-12">
-    <h2 class="text-sm font-semibold uppercase tracking-widest text-offwhite/50">Featured Project</h2>
-    <div class="mt-4 grid gap-4">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-offwhite/50">Featured Projects</h2>
+    <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {featuredProjects.map((p) => <ProjectCard {...p} />)}
     </div>
   </section>
@@ -83,41 +84,9 @@ import { withBase } from "../lib/url";
       </dl>
       {externalAdvisory.photo && (
         <figure class="reveal mt-5 overflow-hidden rounded-xl border border-white/10 bg-base-900">
-          <img src={withBase(externalAdvisory.photo.src)} alt={externalAdvisory.photo.caption} loading="lazy" class="w-full object-cover" />
-          <figcaption class="p-2 text-xs text-offwhite/70">{externalAdvisory.photo.caption}</figcaption>
+          <img src={withBase(externalAdvisory.photo.src)} alt={externalAdvisory.photo.caption || externalAdvisory.role} loading="lazy" class="w-full object-cover" />
+          {externalAdvisory.photo.caption && <figcaption class="p-2 text-xs text-offwhite/70">{externalAdvisory.photo.caption}</figcaption>}
         </figure>
-      )}
-    </div>
-  </section>
-
-  <section class="reveal mt-12">
-    <h2 class="text-sm font-semibold uppercase tracking-widest text-offwhite/50">테스트 케이스 문서</h2>
-    <div class="mt-4 rounded-2xl border border-white/10 bg-base-800 p-6">
-      <h3 class="text-lg font-bold text-offwhite">{testCaseDoc.title}</h3>
-      <p class="mt-2 text-sm leading-relaxed text-offwhite/70">{testCaseDoc.description}</p>
-
-      {testCaseDoc.ready ? (
-        <div class="mt-4 flex flex-wrap gap-3">
-          <a
-            href={withBase(testCaseDoc.fileUrl)}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="rounded-full bg-accent-500 px-5 py-2 text-sm font-semibold text-base-900"
-          >
-            문서 보기
-          </a>
-          <a
-            href={withBase(testCaseDoc.fileUrl)}
-            download
-            class="rounded-full border border-white/20 px-5 py-2 text-sm font-semibold text-offwhite"
-          >
-            다운로드
-          </a>
-        </div>
-      ) : (
-        <p class="mt-4 inline-block rounded-full border border-dashed border-white/20 px-4 py-2 text-xs text-offwhite/50">
-          준비 중 — 문서가 확정되면 이 자리에 "문서 보기 / 다운로드" 버튼이 표시됩니다
-        </p>
       )}
     </div>
   </section>

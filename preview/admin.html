@@ -116,7 +116,7 @@
   </section>
 
   <section class="panel" id="panel-portfolio">
-    <div class="notice">핵심 스킬 딥다이브, Featured Project, 대외활동(정부사업 자문), 테스트 케이스 문서, Skills&amp;Tools, Achievements를 관리합니다.</div>
+    <div class="notice">핵심 스킬 딥다이브, Featured Project, 대외활동(정부사업 자문), Skills&amp;Tools, Achievements를 관리합니다.</div>
     <div id="portfolio-form"></div>
     <div class="code-head"><h3>생성된 코드 — src/content/portfolio.ts</h3><button class="btn btn-accent btn-sm" onclick="copyCode('portfolio')">복사하기</button></div>
     <pre class="code-box" id="portfolio-code"></pre>
@@ -194,27 +194,31 @@ const DEFAULT_STATE = {
   portfolio: {
     skillDeepDives: [
       { name: "JIRA", quote: "모든 이슈를 자산화하여, 누락 없는 QA 환경을 구축할 수 있습니다.",
-        points: ["맞춤형 Workflow 설계: 프로젝트 특성에 최적화된 이슈 상태와 전환 흐름을 직접 세팅합니다.", "이슈 보고 프로세스 최적화: 리포터마다 기입 정보가 누락되거나 상이할 수 있는 점을 최소화하는 프로세스를 적용합니다. 리포트 내 이슈의 최소 정보가 보장되며, 레이블을 통해 이슈를 더 쉽게 추적할 수 있습니다."],
-        photos: [{ src: "/images/portfolio/jira-slide.jpg", caption: "JIRA — Workflow 설계 및 이슈 보고 프로세스 (포트폴리오 슬라이드)" }] },
+        points: [],
+        photos: [{ src: "/images/portfolio/jira-slide.jpg", srcPath: "/images/portfolio/jira-slide.jpg", caption: "" }] },
       { name: "GitHub", quote: "명확한 버전 관리 및 브랜치 전략을 수립하여 안정적인 서비스 환경을 구축합니다.",
-        points: ["안전한 서비스를 위한 브랜치 전략: 안정적인 라이브 서비스를 위해 Code Freeze된 버전의 Dev 빌드에서 테스트를 진행합니다. 테스트 마감 시, 안전이 확보된 Dev Branch에서 Live 브랜치를 딴 후 서비스합니다.", "버그 수정을 위한 머지 전략 — 라이브 환경에서 발견된 버그: Master 최신 / 서비스 중인 버전의 Dev에서 테스트 후, 라이브 패치에 반영합니다.", "버그 수정을 위한 머지 전략 — Master 환경에서 발견된 버그: Live에 영향 없는 신규 시스템 버그는 Master 버전에만 반영합니다."],
-        photos: [{ src: "/images/portfolio/github-slide.jpg", caption: "GitHub — 브랜치 전략 및 머지 전략 다이어그램 (포트폴리오 슬라이드)" }] },
+        points: [],
+        photos: [{ src: "/images/portfolio/github-slide.jpg", srcPath: "/images/portfolio/github-slide.jpg", caption: "" }] },
       { name: "Unity", quote: "에디터 내 직접 테스트 및 데이터 검증",
-        points: ["에디터 내 데이터 변경: Hierarchy 및 Inspector를 통해 데이터를 직접 수정하는 방식으로 테스트, 빌드 대기 시간을 최소화합니다.", "해상도(Resolution) 변경으로 UI 검수: 다양한 해상도와 화면 비율을 시뮬레이션하여 UI 구성 등을 테스트합니다.", "테스트에 필요한 이미지, 사운드, Prefab 등 리소스를 직접 추출하여 검증합니다."],
-        photos: [{ src: "/images/portfolio/unity-slide.jpg", caption: "Unity — 에디터 내 데이터/UI 검수 (포트폴리오 슬라이드)" }] },
+        points: [],
+        photos: [{ src: "/images/portfolio/unity-slide.jpg", srcPath: "/images/portfolio/unity-slide.jpg", caption: "" }] },
       { name: "Excel", quote: "체계적인 테스트 문서 설계를 통해, 업무를 효율화하고 품질 현황을 투명하게 가시화합니다.",
-        points: ["테스트 시뮬레이터 제작: 기획 검증 및 인게임 테스트 검증을 위해 테스트 시뮬레이터를 제작하며, VLOOKUP / MOD 등 다양한 함수를 활용합니다.", "테스트 동선 최적화: ISTQB 산업 표준에 의거한 테스트를 설계합니다. 불필요한 동선을 최소화한 상태전이 기반 테스트 설계로 전체 테스트 리드 타임을 크게 단축합니다.", "테스트 시각화: 전체 TC 대비 각 상태를 실시간으로 분류·집계하고, 각 항목의 비율을 수치화하여 유관 부서에 현재 시스템의 품질 현황을 한눈에 파악할 수 있게 합니다."],
-        photos: [{ src: "/images/portfolio/excel-slide.jpg", caption: "Excel — 테스트 시뮬레이터 및 테스트 시각화 (포트폴리오 슬라이드)" }] },
+        points: [],
+        photos: [{ src: "/images/portfolio/excel-slide.jpg", srcPath: "/images/portfolio/excel-slide.jpg", caption: "" }] },
       { name: "Photoshop", quote: "버그 검수를 넘어, 아트 리소스 수정과 마케팅 이미지 제작을 직접 지원하여 유관 부서의 병목을 해소합니다.",
-        points: ["마케팅 / 프로모션 이미지 제작 및 편집을 직접 지원합니다.", "마케팅 에셋 퀄리티 컨트롤: 앱 마켓 썸네일, 배너 등 이미지의 해상도, 레이아웃, 오탈자를 검수하고 필요 시 직접 수정합니다.", "그래픽 리소스 자체 수급: 리사이징, 텍스트 교체 등 아트 리소스가 낭비되지 않도록 즉각 편집이 가능합니다."],
-        photos: [{ src: "/images/portfolio/photoshop-slide.jpg", caption: "Photoshop — 마케팅 이미지 및 그래픽 리소스 작업물 (포트폴리오 슬라이드)" }] },
+        points: [],
+        photos: [{ src: "/images/portfolio/photoshop-slide.jpg", srcPath: "/images/portfolio/photoshop-slide.jpg", caption: "" }] },
       { name: "Diff & Debug Tools", quote: "오류의 사전 추적, 사후 분석",
-        points: ["사전 추적(무결성 확보): Compare 툴을 활용하여 수정되지 않아야 하는 데이터 테이블이나 코드가 의도치 않게 변경되었는지 검수하고, GitHub 커밋 로그의 변경 사항을 직접 리뷰하여 형상 관리를 교차 검증합니다.", "사후 분석(안드로이드 환경 크래시 분석): 빌드된 게임에서 오류 발생 시 Android Studio를 연결하여 어느 부분에서 크래시가 발생했는지 재현 및 로그 추출이 가능합니다.", "사후 분석(Unity 에디터 디버깅): Unity 환경 내에서 발생하는 런타임 에러 등 이슈를 Console 로그를 통해 추적하여, 개발팀에 명확한 재현 경로와 발생 지점을 공유합니다."],
-        photos: [{ src: "/images/portfolio/diffdebug-slide.jpg", caption: "Diff & Debug Tools — Fork 무결성 검수 및 Android Studio 크래시 분석 (포트폴리오 슬라이드)" }] },
+        points: [],
+        photos: [{ src: "/images/portfolio/diffdebug-slide.jpg", srcPath: "/images/portfolio/diffdebug-slide.jpg", caption: "" }] },
     ],
     featuredProjects: [
-      { title: "쿠노이치 키우기 (방치형 RPG)", period: "2025.02 ~ 2025.11", role: "Director & Lead QA", highlight: "프로젝트 총괄. 개발 시작부터 런칭까지 모든 개발 파이프라인을 통제했습니다.",
-        photo: { src: "/images/portfolio/project-slide.jpg", caption: "쿠노이치 키우기 — Director & Lead QA (포트폴리오 슬라이드)" } },
+      { title: "쿠노이치 키우기", period: "2025.02 ~ 2025.11", role: "PD", highlight: "기획, 마케팅, 배포, 런칭 담당\nQA 교육, 대외 커뮤니케이션 담당",
+        photo: { src: "/images/portfolio/project-slide.jpg", srcPath: "/images/portfolio/project-slide.jpg", caption: "" } },
+      { title: "방치형 RPG 시리즈 (썩쏘 키우기 등)", period: "2022 ~ 2024", role: "QA", highlight: "썩쏘 키우기, 잔다르크 키우기, 철구 키우기 등 6개 타이틀 개발 초기 ~ 런칭 QA 및 지표 분석, Growth Hacking, 유저 공식 카페 운영",
+        photo: { src: "", srcPath: "", caption: "" } },
+      { title: "TERA / Elyon (Unreal Engine)", period: "2017.08 ~ 2019.08", role: "라이브·개발 QA", highlight: "국내 라이브 서비스 QA, 이탈 요인 분석, QA Plan 수립 및 SignOff 수행",
+        photo: { src: "", srcPath: "", caption: "" } },
     ],
     externalAdvisory: {
       role: "정부사업 평가/자문 위원",
@@ -222,9 +226,8 @@ const DEFAULT_STATE = {
       projectName: "우수기업연구소육성사업(ATC+)",
       taskName: "실감형 콘텐츠 공유 서비스를 위한 그래프 기반 지능형 메타버스 엔진 개발",
       advisoryDetail: "메타버스 3D 에셋 관리 현황과 동적 로드 및 조합 가능한 비율 검토",
-      photo: { src: "/images/portfolio/advisory-slide.jpg", caption: "우수기업연구소육성사업(ATC+) 전문가 검토 의견서 (포트폴리오 슬라이드)" },
+      photo: { src: "/images/portfolio/advisory-slide.jpg", srcPath: "/images/portfolio/advisory-slide.jpg", caption: "" },
     },
-    testCaseDoc: { ready: false, title: "테스트 케이스 문서 (준비 중)", description: "DWGames 방치형 RPG 중 1개 프로젝트의 테스트 케이스 문서를 준비 중입니다. NDA 검토 및 민감정보 제거 후 업로드 예정입니다.", fileUrl: "", fileType: "pdf" },
     skills: [
       { category: "QA/협업 툴", items: ["Jira", "Confluence", "Redmine", "Mantis", "Slack"] },
       { category: "버전관리", items: ["GitHub", "SVN", "Perforce", "Fork"] },
@@ -240,17 +243,30 @@ const DEFAULT_STATE = {
   qna: {
     q1: {
       question: "최근 3년 동안 참여한 서브컬처 오프라인 행사 횟수를 작성해 주세요.",
-      headCopy: "사진 찍는 게 취미라 각 행사의 기록을 사진으로 남겨왔음",
-      summary: "최근 3년간 개근",
-      events: ["서울 코믹월드 (청주 포함)", "서울 코믹월드 (부산 포함)", "아코스타", "AGF", "플레이엑스포", "일러스타", "일러스타카페", "부천만화축제"],
-      photos: [],
+      headCopy: "최근 3년간 안 간 행사가 없어요..",
+      summary: "증거 자료로 제출합니다.",
+      events: ["서울 코믹월드 (청주, 부산, 서울 포함)", "아코스타", "AGF", "플레이엑스포", "일러스타", "일러스타카페", "부천만화축제", "코스앤코믹 페스티벌"],
+      photos: [
+        { src: "/images/qna/q1-1.jpg", srcPath: "/images/qna/q1-1.jpg", caption: "26.05 수원 코믹월드" },
+        { src: "/images/qna/q1-2.jpg", srcPath: "/images/qna/q1-2.jpg", caption: "25.12 AGF" },
+        { src: "/images/qna/q1-3.jpg", srcPath: "/images/qna/q1-3.jpg", caption: "25.07 서울 코믹월드" },
+        { src: "/images/qna/q1-4.jpg", srcPath: "/images/qna/q1-4.jpg", caption: "25.10 수원 코믹월드" },
+        { src: "/images/qna/q1-5.jpg", srcPath: "/images/qna/q1-5.jpg", caption: "개인 촬영회(서브컬쳐 모임)" },
+        { src: "/images/qna/q1-6.jpg", srcPath: "/images/qna/q1-6.jpg", caption: "일산 킨텍스 행사" },
+        { src: "/images/qna/q1-7.jpg", srcPath: "/images/qna/q1-7.jpg", caption: "25.10 코믹월드" },
+      ],
     },
     q2: {
       question: "본인이 생각하는 오타쿠 레벨(Lv.0~10)과 이유를 작성해 주세요.",
       level: 7,
       maxLevel: 10,
-      reasons: ["고전 장르, 특히 《블리치》 애정 — 좋아하는 장면을 코스어와 함께 사진으로 재현", "최근에는 코스프레 자체에도 관심이 생겨 직접 코스프레 행사(코코페, 빅보 등)에 참여", "덕질의 증거를 사진으로 기록하고 보관하는 습관"],
-      photos: [],
+      reasons: ["고전 장르, 특히 《블리치》 애정 — 좋아하는 장면을 코스어와 함께 사진으로 재현", "최근에는 코스프레 자체에도 관심이 생겨 직접 코스프레 행사(코코페 빅보)에 참여", "덕질의 증거를 사진으로 기록하고 보관하는 습관", "최근에는 AI 개발과 제가 찍은 사진을 융합해서.. '진짜같은 가짜' 프로젝트를 개인적으로 진행 중이에요. ", "ㄴ https://chosikdongmul.github.io/FakeReal/odod/", "ㄴ https://chosikdongmul.github.io/FakeReal/odfc/", "ㄴ https://chosikdongmul.github.io/macPolio/"],
+      photos: [
+        { src: "/images/qna/q2-1.jpg", srcPath: "/images/qna/q2-1.jpg", caption: "코스 앤 코믹 페스티벌" },
+        { src: "/images/qna/q2-2.jpg", srcPath: "/images/qna/q2-2.jpg", caption: "이누야샤 촬영" },
+        { src: "/images/qna/q2-3.jpg", srcPath: "/images/qna/q2-3.jpg", caption: "26.05 플레이엑스포" },
+        { src: "/images/qna/KakaoTalk_20260702_155339238.jpg", srcPath: "/images/qna/KakaoTalk_20260702_155339238.jpg", caption: "26.06.28 서울랜드" },
+      ],
     },
   },
 };
@@ -496,6 +512,57 @@ function photoListEditor(container, arr, folder, onChangeStructure) {
     addBtn.textContent = "+ 사진 추가";
     addBtn.addEventListener("click", () => { arr.push({ src: "", srcPath: "", caption: "" }); saveState(); draw(); if (onChangeStructure) onChangeStructure(); });
     container.appendChild(addBtn);
+  }
+  draw();
+}
+
+// 사진 1장 편집기 (예: Featured Project 대표 이미지, 대외활동 대표 이미지)
+function singlePhotoEditor(container, photoObj, folder, onChangeStructure) {
+  function draw() {
+    container.innerHTML = "";
+    const row = el("div", "photo-item");
+    let thumb;
+    if (photoObj.src && photoObj.src.startsWith("data:")) {
+      thumb = document.createElement("img");
+      thumb.className = "photo-thumb";
+      thumb.src = photoObj.src;
+    } else {
+      thumb = el("div", "photo-thumb-empty", []);
+      thumb.textContent = "미리보기 없음";
+    }
+
+    const fields = el("div", "photo-fields");
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/*";
+    fileInput.style.fontSize = "11px";
+    fileInput.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      handlePhotoFile(
+        file,
+        folder,
+        (dataUrl) => { photoObj.src = dataUrl; saveState(); draw(); },
+        (suggested) => { if (!photoObj.srcPath) photoObj.srcPath = suggested; }
+      );
+    });
+
+    const srcField = fieldWrap("실제 배포 경로 (public/images/" + folder + "/ 안 파일명)", textInput(photoObj.srcPath || photoObj.src || "", (v) => { photoObj.srcPath = v; saveState(); }, "/images/" + folder + "/파일명.jpg"));
+    const captionField = fieldWrap("캡션", textInput(photoObj.caption, (v) => { photoObj.caption = v; saveState(); }, "이미지 설명"));
+
+    const removeBtn = el("button", "btn btn-danger btn-sm");
+    removeBtn.type = "button";
+    removeBtn.textContent = "이미지 제거";
+    removeBtn.addEventListener("click", () => { photoObj.src = ""; photoObj.srcPath = ""; photoObj.caption = ""; saveState(); draw(); if (onChangeStructure) onChangeStructure(); });
+
+    fields.appendChild(el("div", "field", [(() => { const l = document.createElement("label"); l.textContent = "파일 선택 (미리보기용, 실제 저장 아님)"; return l; })(), fileInput]));
+    fields.appendChild(srcField);
+    fields.appendChild(captionField);
+    fields.appendChild(el("div", "remove-row", [removeBtn]));
+
+    row.appendChild(thumb);
+    row.appendChild(fields);
+    container.appendChild(row);
   }
   draw();
 }
@@ -925,9 +992,11 @@ function renderPortfolio() {
       ]);
       box.appendChild(row);
       box.appendChild(fieldWrap("핵심 성과 한 줄", textareaInput(proj.highlight, (v) => { proj.highlight = v; saveState(); }, 2)));
-      if (!proj.photo) proj.photo = { src: "", caption: "" };
-      box.appendChild(fieldWrap("이미지 경로 (public/images/portfolio/ 안 파일명, 선택)", textInput(proj.photo.src, (v) => { proj.photo.src = v; saveState(); }, "/images/portfolio/project-slide.jpg")));
-      box.appendChild(fieldWrap("이미지 캡션", textInput(proj.photo.caption, (v) => { proj.photo.caption = v; saveState(); })));
+      if (!proj.photo) proj.photo = { src: "", srcPath: "", caption: "" };
+      box.appendChild(el("div", "subhead", [document.createTextNode("대표 이미지 (선택)")]));
+      const projPhotoWrap = el("div");
+      singlePhotoEditor(projPhotoWrap, proj.photo, "portfolio", refreshPortfolioCode);
+      box.appendChild(projPhotoWrap);
       const removeBtn = el("button", "btn btn-danger btn-sm");
       removeBtn.type = "button";
       removeBtn.textContent = "삭제";
@@ -938,7 +1007,7 @@ function renderPortfolio() {
     const addBtn = el("button", "btn btn-accent btn-sm");
     addBtn.type = "button";
     addBtn.textContent = "+ 프로젝트 추가";
-    addBtn.addEventListener("click", () => { p.featuredProjects.push({ title: "", period: "", role: "", highlight: "", photo: { src: "", caption: "" } }); saveState(); drawProjects(); refreshPortfolioCode(); });
+    addBtn.addEventListener("click", () => { p.featuredProjects.push({ title: "", period: "", role: "", highlight: "", photo: { src: "", srcPath: "", caption: "" } }); saveState(); drawProjects(); refreshPortfolioCode(); });
     projList.appendChild(addBtn);
   }
   drawProjects();
@@ -947,7 +1016,7 @@ function renderPortfolio() {
   root.appendChild(el("div", "subhead", [document.createTextNode("대외활동 — 정부사업 평가/자문 위원")]));
   const advCard = el("div", "card");
   const adv = p.externalAdvisory;
-  if (!adv.photo) adv.photo = { src: "", caption: "" };
+  if (!adv.photo) adv.photo = { src: "", srcPath: "", caption: "" };
   advCard.appendChild(fieldWrap("역할/직함", textInput(adv.role, (v) => { adv.role = v; saveState(); })));
   advCard.appendChild(el("div", "subhead", [document.createTextNode("수행 역할 (불릿)")]));
   const advPointsWrap = el("div");
@@ -956,29 +1025,11 @@ function renderPortfolio() {
   advCard.appendChild(fieldWrap("사업명", textInput(adv.projectName, (v) => { adv.projectName = v; saveState(); })));
   advCard.appendChild(fieldWrap("연구개발과제명", textareaInput(adv.taskName, (v) => { adv.taskName = v; saveState(); }, 2)));
   advCard.appendChild(fieldWrap("자문 내용", textareaInput(adv.advisoryDetail, (v) => { adv.advisoryDetail = v; saveState(); }, 2)));
-  advCard.appendChild(fieldWrap("이미지 경로 (public/images/portfolio/ 안 파일명, 선택)", textInput(adv.photo.src, (v) => { adv.photo.src = v; saveState(); }, "/images/portfolio/advisory-slide.jpg")));
-  advCard.appendChild(fieldWrap("이미지 캡션", textInput(adv.photo.caption, (v) => { adv.photo.caption = v; saveState(); })));
+  advCard.appendChild(el("div", "subhead", [document.createTextNode("대표 이미지 (선택)")]));
+  const advPhotoWrap = el("div");
+  singlePhotoEditor(advPhotoWrap, adv.photo, "portfolio", refreshPortfolioCode);
+  advCard.appendChild(advPhotoWrap);
   root.appendChild(advCard);
-
-  root.appendChild(el("div", "subhead", [document.createTextNode("테스트 케이스 문서")]));
-  const docCard = el("div", "card");
-  docCard.appendChild(checkboxRow("문서 준비 완료 (체크하면 다운로드 버튼이 표시됩니다)", p.testCaseDoc.ready, (v) => { p.testCaseDoc.ready = v; saveState(); refreshPortfolioCode(); }));
-  docCard.appendChild(fieldWrap("제목", textInput(p.testCaseDoc.title, (v) => { p.testCaseDoc.title = v; saveState(); })));
-  docCard.appendChild(fieldWrap("설명", textareaInput(p.testCaseDoc.description, (v) => { p.testCaseDoc.description = v; saveState(); }, 2)));
-  const docRow = el("div", "row", [
-    fieldWrap("파일 경로 (public/images/portfolio/ 안 파일명)", textInput(p.testCaseDoc.fileUrl, (v) => { p.testCaseDoc.fileUrl = v; saveState(); }, "/images/portfolio/test-case.pdf")),
-  ]);
-  const typeSelect = document.createElement("select");
-  ["pdf", "xlsx"].forEach((t) => {
-    const opt = document.createElement("option");
-    opt.value = t; opt.textContent = t.toUpperCase();
-    if (p.testCaseDoc.fileType === t) opt.selected = true;
-    typeSelect.appendChild(opt);
-  });
-  typeSelect.addEventListener("change", (e) => { p.testCaseDoc.fileType = e.target.value; saveState(); refreshPortfolioCode(); });
-  docRow.appendChild(fieldWrap("파일 형식", typeSelect));
-  docCard.appendChild(docRow);
-  root.appendChild(docCard);
 
   root.appendChild(el("div", "subhead", [document.createTextNode("Skills & Tools")]));
   const skillsList = el("div");
@@ -1062,7 +1113,8 @@ ${photosCode}
   }).join("\n");
 
   const projectsCode = p.featuredProjects.map((proj) => {
-    const photoLine = proj.photo && proj.photo.src ? `\n    photo: { src: "${esc(proj.photo.src)}", caption: "${esc(proj.photo.caption)}" },` : "";
+    const projPhotoSrc = proj.photo ? (proj.photo.srcPath || proj.photo.src) : "";
+    const photoLine = projPhotoSrc ? `\n    photo: { src: "${esc(projPhotoSrc)}", caption: "${esc(proj.photo.caption)}" },` : "";
     return `  {
     title: "${esc(proj.title)}",
     period: "${esc(proj.period)}",
@@ -1073,7 +1125,8 @@ ${photosCode}
 
   const adv = p.externalAdvisory;
   const advPointsCode = adv.points.map((pt) => `    "${esc(pt)}",`).join("\n");
-  const advPhotoLine = adv.photo && adv.photo.src ? `\n  photo: { src: "${esc(adv.photo.src)}", caption: "${esc(adv.photo.caption)}" },` : "";
+  const advPhotoSrc = adv.photo ? (adv.photo.srcPath || adv.photo.src) : "";
+  const advPhotoLine = advPhotoSrc ? `\n  photo: { src: "${esc(advPhotoSrc)}", caption: "${esc(adv.photo.caption)}" },` : "";
 
   const skillsCode = p.skills.map((g) => `  { category: "${esc(g.category)}", items: [${g.items.map((i) => `"${esc(i)}"`).join(", ")}] },`).join("\n");
   const achCode = p.achievements.map((a) => `  { name: "${esc(a.name)}", date: "${esc(a.date)}" },`).join("\n");
@@ -1100,26 +1153,17 @@ export type FeaturedProject = {
   photo?: Photo;
 };
 
-// 4.3-b Featured Project
+// 4.3-b Featured Projects
 export const featuredProjects: FeaturedProject[] = [
 ${projectsCode}
 ];
 
-// 4.3-c 테스트 케이스 문서 뷰어
-export const testCaseDoc = {
-  ready: ${p.testCaseDoc.ready ? "true" : "false"},
-  title: "${esc(p.testCaseDoc.title)}",
-  description: "${esc(p.testCaseDoc.description)}",
-  fileUrl: "${esc(p.testCaseDoc.fileUrl)}",
-  fileType: "${esc(p.testCaseDoc.fileType)}" as "pdf" | "xlsx",
-};
-
-// 4.3-d Skills & Tools
+// 4.3-c Skills & Tools
 export const skills = [
 ${skillsCode}
 ];
 
-// 4.3-e 대외활동 상세 (정부사업 평가/자문 위원)
+// 4.3-d 대외활동 상세 (정부사업 평가/자문 위원)
 export type ExternalAdvisory = {
   role: string;
   points: string[];
@@ -1139,7 +1183,7 @@ ${advPointsCode}
   advisoryDetail: "${esc(adv.advisoryDetail)}",${advPhotoLine}
 };
 
-// 4.3-f Achievements
+// 4.3-e Achievements
 export const achievements = [
 ${achCode}
 ];
