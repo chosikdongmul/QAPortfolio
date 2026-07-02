@@ -1,7 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import { featuredProjects, testCaseDoc, skills, achievements } from "../content/portfolio";
+import PhotoGrid from "../components/PhotoGrid.astro";
+import {
+  skillDeepDives,
+  featuredProjects,
+  testCaseDoc,
+  skills,
+  achievements,
+  externalAdvisory,
+} from "../content/portfolio";
 import { personal } from "../content/site";
 import { withBase } from "../lib/url";
 ---
@@ -9,13 +17,66 @@ import { withBase } from "../lib/url";
 <BaseLayout title={`Portfolio · ${personal.nameKr}`}>
   <section class="reveal py-8">
     <h1 class="text-3xl font-extrabold text-offwhite sm:text-4xl">Portfolio</h1>
-    <p class="mt-2 text-offwhite/70">프로젝트, 테스트 케이스 문서, 역량 및 자격</p>
+    <p class="mt-2 text-offwhite/70">핵심 스킬, 대표 프로젝트, 대외활동, 역량 및 자격</p>
   </section>
 
   <section class="reveal">
-    <h2 class="text-sm font-semibold uppercase tracking-widest text-offwhite/50">Featured Projects</h2>
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-offwhite/50">핵심 스킬 딥다이브</h2>
+    <div class="mt-4 space-y-6">
+      {skillDeepDives.map((skill) => (
+        <div class="reveal rounded-2xl border border-white/10 bg-base-800 p-6">
+          <h3 class="text-lg font-bold text-offwhite">{skill.name}</h3>
+          <p class="mt-2 text-base font-medium leading-relaxed text-accent-400">"{skill.quote}"</p>
+          <ul class="mt-4 space-y-2">
+            {skill.points.map((point) => (
+              <li class="flex gap-2 text-sm leading-relaxed text-offwhite/80">
+                <span class="text-accent-400">·</span>
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+          {skill.photos.length > 0 && (
+            <div class="mt-5">
+              <PhotoGrid photos={skill.photos} />
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="reveal mt-12">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-offwhite/50">Featured Project</h2>
     <div class="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {featuredProjects.map((p) => <ProjectCard {...p} />)}
+    </div>
+  </section>
+
+  <section class="reveal mt-12">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-offwhite/50">대외활동 — {externalAdvisory.role}</h2>
+    <div class="mt-4 rounded-2xl border border-white/10 bg-base-800 p-6">
+      <ul class="space-y-2">
+        {externalAdvisory.points.map((point) => (
+          <li class="flex gap-2 text-sm leading-relaxed text-offwhite/80">
+            <span class="text-accent-400">·</span>
+            <span>{point}</span>
+          </li>
+        ))}
+      </ul>
+      <dl class="mt-5 space-y-3 border-t border-white/10 pt-4 text-sm">
+        <div>
+          <dt class="text-offwhite/50">사업명</dt>
+          <dd class="mt-1 text-offwhite">{externalAdvisory.projectName}</dd>
+        </div>
+        <div>
+          <dt class="text-offwhite/50">연구개발과제명</dt>
+          <dd class="mt-1 text-offwhite">{externalAdvisory.taskName}</dd>
+        </div>
+        <div>
+          <dt class="text-offwhite/50">자문 내용</dt>
+          <dd class="mt-1 text-offwhite">{externalAdvisory.advisoryDetail}</dd>
+        </div>
+      </dl>
     </div>
   </section>
 
