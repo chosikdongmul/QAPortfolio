@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { personal, positioning, philosophy, selfIntro, coreStrengths, ctaLinks } from "../content/site";
+import { withBase } from "../lib/url";
+---
+
+<BaseLayout title={`${personal.nameKr} · ${personal.titleKr}`}>
+  <section class="reveal py-10 sm:py-16">
+    {personal.photo ? (
+      <img
+        src={withBase(personal.photo)}
+        alt={`${personal.nameKr} 프로필 사진`}
+        class="mb-6 h-28 w-28 rounded-full object-cover ring-2 ring-accent-500/50"
+      />
+    ) : (
+      <div
+        class="mb-6 flex h-28 w-28 items-center justify-center rounded-full border border-dashed border-white/20 bg-base-800 text-center text-xs text-offwhite/40"
+        aria-label="프로필 사진 준비 중"
+      >
+        프로필 사진<br />준비 중
+      </div>
+    )}
+    <p class="text-sm font-medium tracking-wide text-accent-400">{personal.taglineEn}</p>
+    <h1 class="mt-3 text-4xl font-extrabold leading-tight text-offwhite sm:text-5xl">
+      {personal.nameKr} <span class="text-offwhite/50">({personal.nameEn})</span>
+    </h1>
+    <p class="mt-2 text-lg text-offwhite/70">{personal.titleKr} · 경력 {personal.careerTotal}</p>
+
+    <p class="mt-8 whitespace-pre-line text-2xl font-bold leading-snug text-offwhite sm:text-3xl">
+      {positioning}
+    </p>
+  </section>
+
+  <section class="reveal rounded-2xl border border-accent-500/30 bg-base-800 p-6 sm:p-8">
+    <p class="text-xs font-semibold uppercase tracking-widest text-accent-400">Philosophy</p>
+    <p class="mt-3 text-xl font-medium leading-relaxed text-offwhite sm:text-2xl">
+      "{philosophy}"
+    </p>
+  </section>
+
+  <section class="reveal mt-14">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-offwhite/50">자기소개서</h2>
+    <div class="mt-4 rounded-2xl border border-white/10 bg-base-800 p-6 sm:p-8">
+      {selfIntro.map((paragraph) => (
+        <p class="mt-4 first:mt-0 text-sm leading-relaxed text-offwhite/80">{paragraph}</p>
+      ))}
+    </div>
+  </section>
+
+  <section class="reveal mt-14">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-offwhite/50">핵심 역량</h2>
+    <div class="mt-4 grid gap-4 sm:grid-cols-3">
+      {coreStrengths.map((item) => (
+        <div class="rounded-2xl border border-white/10 bg-base-800 p-5">
+          <h3 class="font-bold text-accent-400">{item.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-offwhite/80">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="reveal mt-14 grid gap-4 sm:grid-cols-3">
+    {ctaLinks.map((cta) => (
+      <a
+        href={withBase(cta.href)}
+        class="group rounded-2xl border border-white/10 bg-base-800 p-6 transition-colors hover:border-accent-500 hover:bg-base-700"
+      >
+        <p class="font-bold text-offwhite group-hover:text-accent-400">{cta.label} →</p>
+        <p class="mt-1 text-sm text-offwhite/60">{cta.desc}</p>
+      </a>
+    ))}
+  </section>
+</BaseLayout>

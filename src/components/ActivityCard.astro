@@ -1,0 +1,18 @@
+---
+import PhotoGrid from "./PhotoGrid.astro";
+import type { ExternalActivity } from "../content/career";
+
+interface Props {
+  activity: ExternalActivity;
+}
+const { activity } = Astro.props;
+---
+
+<article class="reveal rounded-2xl border border-white/10 bg-base-800 p-6">
+  <p class="text-xs font-medium text-accent-400">{activity.period}</p>
+  <h3 class="mt-1 text-lg font-bold text-offwhite">{activity.name}</h3>
+  <p class="mt-2 text-sm leading-relaxed text-offwhite/80">{activity.description}</p>
+  <div class="mt-4">
+    <PhotoGrid photos={activity.photos} emptyHint="활동 사진 업로드 예정" placeholderCount={2} />
+  </div>
+</article>

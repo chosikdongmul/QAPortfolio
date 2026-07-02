@@ -1,0 +1,13 @@
+---
+import { contact, personal } from "../content/site";
+---
+
+<footer class="border-t border-white/10 px-5 py-10 text-sm text-offwhite/70">
+  <div class="mx-auto flex max-w-5xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+    <p>{personal.nameKr} ({personal.nameEn}) · {personal.careerTotal} 경력</p>
+    <div class="flex flex-col gap-1 sm:flex-row sm:gap-4">
+      <a href={`mailto:${contact.email}`} class="hover:text-accent-400">{contact.email}</a>
+      <a href={`tel:${contact.phone}`} class="hover:text-accent-400">{contact.phone}</a>
+    </div>
+  </div>
+</footer>

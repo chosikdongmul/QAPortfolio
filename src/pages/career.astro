@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CareerCard from "../components/CareerCard.astro";
+import ActivityCard from "../components/ActivityCard.astro";
+import { career, education, externalActivities } from "../content/career";
+import { personal } from "../content/site";
+---
+
+<BaseLayout title={`Career · ${personal.nameKr}`}>
+  <section class="reveal py-8">
+    <h1 class="text-3xl font-extrabold text-offwhite sm:text-4xl">Career</h1>
+    <p class="mt-2 text-offwhite/70">총 경력 {personal.careerTotal} · 5개 회사</p>
+  </section>
+
+  <section class="space-y-4">
+    {career.map((entry) => <CareerCard entry={entry} />)}
+  </section>
+
+  <section class="reveal mt-10 rounded-2xl border border-white/10 bg-base-800 p-6">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-offwhite/50">Education</h2>
+    <p class="mt-2 text-offwhite">{education.school} <span class="text-offwhite/60">· {education.period} · {education.status}</span></p>
+  </section>
+
+  <section class="reveal mt-10">
+    <h2 class="text-sm font-semibold uppercase tracking-widest text-offwhite/50">대외활동</h2>
+    {externalActivities.length > 0 ? (
+      <div class="mt-4 grid gap-4 sm:grid-cols-2">
+        {externalActivities.map((activity) => <ActivityCard activity={activity} />)}
+      </div>
+    ) : (
+      <div class="mt-4 rounded-2xl border border-dashed border-white/15 bg-base-800/50 p-6 text-sm text-offwhite/50">
+        대외활동 내용 준비 중입니다. 어드민 페이지(admin.html)에서 활동명·기간·설명·사진을 추가하면 이 자리에 카드로 표시됩니다.
+      </div>
+    )}
+  </section>
+</BaseLayout>

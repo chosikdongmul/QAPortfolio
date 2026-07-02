@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* ============================================
+   디자인 토큰 (작업지시서 3장 기준)
+   색/폰트를 바꾸고 싶으면 이 값들만 수정하세요.
+   ============================================ */
+@theme {
+  --color-base-900: #1A1D23;
+  --color-base-800: #2A2E38;
+  --color-base-700: #363B47;
+  --color-accent-400: #FFB833;
+  --color-accent-500: #F5A623;
+  --color-offwhite: #E8E8E8;
+
+  --font-sans: "Pretendard", "Spoqa Han Sans Neo", "Apple SD Gothic Neo", sans-serif;
+}
+
+/* Pretendard 웹폰트 (CDN, subset 아님 — 트래픽 걱정되면 자체 호스팅으로 교체 권장) */
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 800;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-ExtraBold.woff2") format("woff2");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-base-900);
+  color: var(--color-offwhite);
+  font-family: var(--font-sans);
+}
+
+/* 스크롤 reveal: IntersectionObserver가 .is-visible을 붙여줌 (Nav.astro/BaseLayout 스크립트 참고) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 포커스 접근성 */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-accent-400);
+  outline-offset: 2px;
+}

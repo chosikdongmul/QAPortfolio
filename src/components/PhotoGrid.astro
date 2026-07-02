@@ -1,0 +1,30 @@
+---
+import type { Photo } from "../content/types";
+import { withBase } from "../lib/url";
+
+interface Props {
+  photos: Photo[];
+  emptyHint?: string;
+  placeholderCount?: number;
+}
+const { photos, emptyHint = "사진 준비되는 대로 이 자리에 채워집니다.", placeholderCount = 4 } = Astro.props;
+---
+
+{photos.length > 0 ? (
+  <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+    {photos.map((photo) => (
+      <figure class="reveal overflow-hidden rounded-xl border border-white/10 bg-base-800">
+        <img src={withBase(photo.src)} alt={photo.caption} loading="lazy" class="aspect-square w-full object-cover" />
+        <figcaption class="p-2 text-xs text-offwhite/70">{photo.caption}</figcaption>
+      </figure>
+    ))}
+  </div>
+) : (
+  <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+    {Array.from({ length: placeholderCount }).map(() => (
+      <div class="flex aspect-square items-center justify-center rounded-xl border border-dashed border-white/15 bg-base-800/50 p-3 text-center text-xs text-offwhite/40">
+        {emptyHint}
+      </div>
+    ))}
+  </div>
+)}

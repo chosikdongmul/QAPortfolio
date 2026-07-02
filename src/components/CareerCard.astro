@@ -1,0 +1,45 @@
+---
+import type { CareerEntry } from "../content/career";
+
+interface Props {
+  entry: CareerEntry;
+}
+const { entry } = Astro.props;
+---
+
+<details class="reveal group rounded-2xl border border-white/10 bg-base-800 open:border-accent-500/50">
+  <summary class="flex cursor-pointer list-none items-center justify-between gap-4 p-6">
+    <div>
+      <p class="text-xs font-medium text-accent-400">{entry.period} · {entry.duration}</p>
+      <h3 class="mt-1 text-lg font-bold text-offwhite">
+        {entry.company} <span class="font-normal text-offwhite/60">· {entry.team}</span>
+      </h3>
+      {entry.jobTitleEn && <p class="mt-1 text-xs text-offwhite/50">{entry.jobTitleEn}</p>}
+    </div>
+    <span class="shrink-0 text-xl text-offwhite/50 transition-transform group-open:rotate-45">+</span>
+  </summary>
+
+  <div class="border-t border-white/10 px-6 pb-6 pt-4">
+    {entry.project && (
+      <p class="mb-3 text-sm text-offwhite/80"><span class="text-accent-400">담당 프로젝트</span> · {entry.project}</p>
+    )}
+    {entry.engine && (
+      <p class="mb-3 text-sm text-offwhite/80"><span class="text-accent-400">엔진</span> · {entry.engine}</p>
+    )}
+    <ul class="space-y-2 text-sm leading-relaxed text-offwhite/80">
+      {entry.responsibilities.map((item) => (
+        <li class="flex gap-2">
+          <span class="text-accent-500">·</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+    {entry.projects && (
+      <div class="mt-4 flex flex-wrap gap-2">
+        {entry.projects.map((p) => (
+          <span class="rounded-full border border-white/10 px-3 py-1 text-xs text-offwhite/70">{p}</span>
+        ))}
+      </div>
+    )}
+  </div>
+</details>

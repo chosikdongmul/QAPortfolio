@@ -1,0 +1,35 @@
+---
+interface Props {
+  level: number;
+  maxLevel?: number;
+}
+const { level, maxLevel = 10 } = Astro.props;
+
+const radius = 85;
+const circumference = 2 * Math.PI * radius;
+const progress = Math.min(level, maxLevel) / maxLevel;
+const dash = circumference * progress;
+---
+
+<div class="flex flex-col items-center gap-2" role="img" aria-label={`오타쿠 레벨 ${level} / ${maxLevel}`}>
+  <svg viewBox="0 0 200 200" class="h-48 w-48">
+    <circle cx="100" cy="100" r={radius} fill="none" stroke="var(--color-base-700)" stroke-width="14" />
+    <circle
+      cx="100"
+      cy="100"
+      r={radius}
+      fill="none"
+      stroke="var(--color-accent-500)"
+      stroke-width="14"
+      stroke-linecap="round"
+      stroke-dasharray={`${dash} ${circumference}`}
+      transform="rotate(-90 100 100)"
+    />
+    <text x="100" y="95" text-anchor="middle" font-size="48" font-weight="800" fill="var(--color-offwhite)">
+      {level}
+    </text>
+    <text x="100" y="122" text-anchor="middle" font-size="14" fill="var(--color-offwhite)" opacity="0.6">
+      / {maxLevel}
+    </text>
+  </svg>
+</div>
