@@ -3,7 +3,7 @@ import type { Photo } from "./types";
 export const q1 = {
   question: "최근 3년 동안 참여한 서브컬처 오프라인 행사 횟수를 작성해 주세요.",
   headCopy: "최근 3년간 안 간 행사가 없어요..",
-  summary: "증거 자료로 제출합니다.",
+  summary: "아래 기재된 행사 외에도, 프리렌 전시회 등 다양한 전시에도 참여했습니다.",
   events: [
     "서울 코믹월드 (청주, 부산, 서울 포함)",
     "아코스타",
@@ -21,7 +21,6 @@ export const q1 = {
     { src: "/images/qna/q1-4.jpg", caption: "25.10 수원 코믹월드" },
     { src: "/images/qna/q1-5.jpg", caption: "개인 촬영회(서브컬쳐 모임)" },
     { src: "/images/qna/q1-6.jpg", caption: "일산 킨텍스 행사" },
-    { src: "/images/qna/q1-7.jpg", caption: "25.10 코믹월드" },
   ] as Photo[],
 };
 
@@ -42,6 +41,5 @@ export const q2 = {
     { src: "/images/qna/q2-1.jpg", caption: "코스 앤 코믹 페스티벌" },
     { src: "/images/qna/q2-2.jpg", caption: "이누야샤 촬영" },
     { src: "/images/qna/q2-3.jpg", caption: "26.05 플레이엑스포" },
-    { src: "/images/qna/KakaoTalk_20260702_155339238.jpg", caption: "26.06.28 서울랜드" },
   ] as Photo[],
 };

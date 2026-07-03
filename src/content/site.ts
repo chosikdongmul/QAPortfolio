@@ -11,7 +11,7 @@ export const personal = {
   careerTotal: "6년",
   // 프로필 사진. public/images/home/ 에 파일을 넣고 경로를 채우세요.
   // 비어 있으면 Home 화면에 플레이스홀더가 표시됩니다.
-  photo: "",
+  photo: "/images/home/profile.jpg",
 };
 
 // 섹션 2. 핵심 포지셔닝
