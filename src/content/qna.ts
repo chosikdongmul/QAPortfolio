@@ -21,6 +21,7 @@ export const q1 = {
     { src: "/images/qna/q1-4.jpg", caption: "25.10 수원 코믹월드" },
     { src: "/images/qna/q1-5.jpg", caption: "개인 촬영회(서브컬쳐 모임)" },
     { src: "/images/qna/q1-6.jpg", caption: "일산 킨텍스 행사" },
+    { src: "/images/qna/q1-7.jpg", caption: "수원 메쎄 행사" },
   ] as Photo[],
 };
 
